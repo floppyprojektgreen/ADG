@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import ch.zhaw.students.adgame.ui.component.HexagonalRadialMenu?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.image.ImageView?>
+
+<AnchorPane fx:controller="ch.zhaw.students.adgame.ui.window.BoardController"
+	xmlns:fx="http://javafx.com/fxml/1">
+
+	<Canvas fx:id="boardCanvas" width="1280" height="720" />
+	
+	<Rectangle fx:id="move" onMouseClicked="#move" />
+	<ImageView fx:id="moveImg" mouseTransparent="true" />
+	
+	<Rectangle fx:id="openShop" onMouseClicked="#openShop" />
+	<ImageView fx:id="openShopImg" mouseTransparent="true" />
+	
+	<Rectangle fx:id="endTurn" onMouseClicked="#endTurn" />
+	<ImageView fx:id="endTurnImg" mouseTransparent="true" />
+	
+	<Rectangle fx:id="save" onMouseClicked="#save" />
+	<ImageView fx:id="saveImg" mouseTransparent="true" />
+	
+	<Rectangle fx:id="exit" onMouseClicked="#exit" />
+	<ImageView fx:id="exitImg" mouseTransparent="true" />
+</AnchorPane>

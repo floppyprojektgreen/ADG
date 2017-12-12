@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.image.ImageView?>
+<?import ch.zhaw.students.adgame.ui.component.NoPaddingLabel?>
+
+<fx:root xmlns:fx="http://javafx.com/fxml/1" type="AnchorPane">
+	<ImageView fx:id="fightableImg" />
+	
+	<NoPaddingLabel fx:id="hitLog" fontSize="31.42" />
+
+	<Rectangle fx:id="healthBar" strokeType="OUTSIDE" strokeWidth="5"/>
+	<Rectangle fx:id="currentHealth" />
+</fx:root>
+

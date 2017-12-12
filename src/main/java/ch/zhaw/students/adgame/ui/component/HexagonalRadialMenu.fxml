@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Polygon?>
+<?import java.lang.Double?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.image.ImageView?>
+
+<fx:root xmlns:fx="http://javafx.com/fxml/1" type="HBox"
+	fx:id="root">
+	
+	<Group>
+		<Rectangle fx:id="layoutfix" fill="rgba(0,0,0,0)" width="1" height="1" />
+	
+		<Group
+			onMouseEntered="#increaseByHover"
+			onMouseExited="#decreaseByHover">
+			<Polygon fx:id="bPoly">
+				<points>
+					<Double fx:value="0.25" />	<Double fx:value="0.0" />
+					<Double fx:value="0.75" />	<Double fx:value="0.0" />
+					<Double fx:value="1.00" />	<Double fx:value="0.5" />
+					<Double fx:value="0.75" />	<Double fx:value="1.0" />
+					<Double fx:value="0.25" />	<Double fx:value="1.0" />
+					<Double fx:value="0.00" />	<Double fx:value="0.5" />
+				</points>
+			</Polygon>
+			<ImageView fx:id="bImg" fitHeight="0.732" fitWidth="0.634" mouseTransparent="true" />
+		</Group>
+		
+		<Group
+			onMouseEntered="#increaseByHover"
+			onMouseExited="#decreaseByHover">
+			<Polygon fx:id="nPoly">
+				<points>
+					<Double fx:value="0.25" />	<Double fx:value="0.0" />
+					<Double fx:value="0.75" />	<Double fx:value="0.0" />
+					<Double fx:value="1.00" />	<Double fx:value="0.5" />
+					<Double fx:value="0.75" />	<Double fx:value="1.0" />
+					<Double fx:value="0.25" />	<Double fx:value="1.0" />
+					<Double fx:value="0.00" />	<Double fx:value="0.5" />
+				</points>
+			</Polygon>
+			<ImageView fx:id="nImg" fitHeight="0.732" fitWidth="0.634" mouseTransparent="true" />
+		</Group>
+		
+		<Group
+			onMouseEntered="#increaseByHover"
+			onMouseExited="#decreaseByHover">
+			<Polygon fx:id="nePoly">
+				<points>
+					<Double fx:value="0.25" />	<Double fx:value="0.0" />
+					<Double fx:value="0.75" />	<Double fx:value="0.0" />
+					<Double fx:value="1.00" />	<Double fx:value="0.5" />
+					<Double fx:value="0.75" />	<Double fx:value="1.0" />
+					<Double fx:value="0.25" />	<Double fx:value="1.0" />
+					<Double fx:value="0.00" />	<Double fx:value="0.5" />
+				</points>
+			</Polygon>
+			<ImageView fx:id="neImg" fitHeight="0.732" fitWidth="0.634" mouseTransparent="true" />
+		</Group>
+		
+		<Group
+			onMouseEntered="#increaseByHover"
+			onMouseExited="#decreaseByHover">
+			<Polygon fx:id="sePoly">
+				<points>
+					<Double fx:value="0.25" />	<Double fx:value="0.0" />
+					<Double fx:value="0.75" />	<Double fx:value="0.0" />
+					<Double fx:value="1.00" />	<Double fx:value="0.5" />
+					<Double fx:value="0.75" />	<Double fx:value="1.0" />
+					<Double fx:value="0.25" />	<Double fx:value="1.0" />
+					<Double fx:value="0.00" />	<Double fx:value="0.5" />
+				</points>
+			</Polygon>
+			<ImageView fx:id="seImg" fitHeight="0.732" fitWidth="0.634" mouseTransparent="true" />
+		</Group>
+		
+		<Group
+			onMouseEntered="#increaseByHover"
+			onMouseExited="#decreaseByHover">
+			<Polygon fx:id="sPoly">
+				<points>
+					<Double fx:value="0.25" />	<Double fx:value="0.0" />
+					<Double fx:value="0.75" />	<Double fx:value="0.0" />
+					<Double fx:value="1.00" />	<Double fx:value="0.5" />
+					<Double fx:value="0.75" />	<Double fx:value="1.0" />
+					<Double fx:value="0.25" />	<Double fx:value="1.0" />
+					<Double fx:value="0.00" />	<Double fx:value="0.5" />
+				</points>
+			</Polygon>
+			<ImageView fx:id="sImg" fitHeight="0.732" fitWidth="0.634" mouseTransparent="true" />
+		</Group>
+		
+		<Group
+			onMouseEntered="#increaseByHover"
+			onMouseExited="#decreaseByHover">
+			<Polygon fx:id="swPoly">
+				<points>
+					<Double fx:value="0.25" />	<Double fx:value="0.0" />
+					<Double fx:value="0.75" />	<Double fx:value="0.0" />
+					<Double fx:value="1.00" />	<Double fx:value="0.5" />
+					<Double fx:value="0.75" />	<Double fx:value="1.0" />
+					<Double fx:value="0.25" />	<Double fx:value="1.0" />
+					<Double fx:value="0.00" />	<Double fx:value="0.5" />
+				</points>
+			</Polygon>
+			<ImageView fx:id="swImg" fitHeight="0.732" fitWidth="0.634" mouseTransparent="true" />
+		</Group>
+		
+		<Group
+			onMouseEntered="#increaseByHover"
+			onMouseExited="#decreaseByHover">
+			<Polygon fx:id="nwPoly">
+				<points>
+					<Double fx:value="0.25" />	<Double fx:value="0.0" />
+					<Double fx:value="0.75" />	<Double fx:value="0.0" />
+					<Double fx:value="1.00" />	<Double fx:value="0.5" />
+					<Double fx:value="0.75" />	<Double fx:value="1.0" />
+					<Double fx:value="0.25" />	<Double fx:value="1.0" />
+					<Double fx:value="0.00" />	<Double fx:value="0.5" />
+				</points>
+			</Polygon>
+			<ImageView fx:id="nwImg" fitHeight="0.732" fitWidth="0.634" mouseTransparent="true" />
+		</Group>
+	</Group>
+</fx:root>
+

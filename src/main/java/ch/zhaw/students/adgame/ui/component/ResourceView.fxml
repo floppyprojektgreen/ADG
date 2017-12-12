@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.image.ImageView?>
+<?import ch.zhaw.students.adgame.ui.component.NoPaddingLabel?>
+
+<fx:root xmlns:fx="http://javafx.com/fxml/1" type="HBox">
+	<NoPaddingLabel fx:id="resourceAmount">
+		<graphic>
+			<ImageView fx:id="resourceImage" />
+		</graphic>
+	</NoPaddingLabel>
+</fx:root>
+

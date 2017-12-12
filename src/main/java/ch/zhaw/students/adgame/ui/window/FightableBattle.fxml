@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import ch.zhaw.students.adgame.ui.component.BattleCharacterOverview?>
+<?import javafx.scene.shape.Rectangle?>
+<?import ch.zhaw.students.adgame.ui.component.BattleFightableOverview?>
+
+<AnchorPane fx:controller="ch.zhaw.students.adgame.ui.window.FightableBattleController"
+	xmlns:fx="http://javafx.com/fxml/1">
+	
+	<Rectangle fx:id="border" />
+	
+	<Rectangle fx:id="bg" />
+	
+	<VBox fx:id="container">
+		<BattleFightableOverview fx:id="fightableOverview" />
+		<Rectangle fx:id="spacingLine" />
+		<BattleCharacterOverview fx:id="characterOverview" onAttack="#attack" />
+	</VBox>
+</AnchorPane>
+

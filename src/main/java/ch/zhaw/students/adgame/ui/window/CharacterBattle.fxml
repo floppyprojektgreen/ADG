@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import ch.zhaw.students.adgame.ui.component.BattleCharacterOverview?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.shape.Polygon?>
+<?import java.lang.Double?>
+
+<AnchorPane fx:controller="ch.zhaw.students.adgame.ui.window.CharacterBattleController"
+	xmlns:fx="http://javafx.com/fxml/1">
+	
+	<Rectangle fx:id="border" />
+	
+	<Rectangle fx:id="bg" />
+	
+	<VBox fx:id="container">
+		<BattleCharacterOverview fx:id="characterOverviewB" onAttack="#attackByB" />
+		<Rectangle fx:id="spacingLineB" />
+		<AnchorPane fx:id="turnSignSpace" >
+			<Polygon fx:id="arrowUp">
+				<points>
+					<Double fx:value="0.5" />	<Double fx:value="0.0" />
+					<Double fx:value="1.0" />	<Double fx:value="1.0" />
+					<Double fx:value="0.0" />	<Double fx:value="1.0" />
+				</points>
+			</Polygon>
+			<Polygon fx:id="arrowDown">
+				<points>
+					<Double fx:value="0.0" />	<Double fx:value="0.0" />
+					<Double fx:value="1.0" />	<Double fx:value="0.0" />
+					<Double fx:value="0.5" />	<Double fx:value="1.0" />
+				</points>
+			</Polygon>
+		</AnchorPane>
+		<Rectangle fx:id="spacingLineA" />
+		<BattleCharacterOverview fx:id="characterOverviewA" onAttack="#attackByA" />
+	</VBox>
+</AnchorPane>
+

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+
+<fx:root xmlns:fx="http://javafx.com/fxml/1" type="AnchorPane">
+	<TextField fx:id="name" />
+	<ComboBox fx:id="colorSelection" />
+</fx:root>
+

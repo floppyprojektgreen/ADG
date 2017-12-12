@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.Group?>
+<?import ch.zhaw.students.adgame.ui.component.LabelButton?>
+
+<AnchorPane fx:controller="ch.zhaw.students.adgame.ui.window.MainMenuController"
+	xmlns:fx="http://javafx.com/fxml/1">
+	
+	<VBox fx:id="menubox" alignment="TOP_CENTER" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" >
+		<ImageView fx:id="logo" preserveRatio="true" />
+		<Label text="AD Game" />
+		
+		<Group>
+			<LabelButton fx:id="play" onAction="#play" text="PLAY" />
+			
+			<LabelButton fx:id="load" onAction="#load" text="LOAD GAME" />
+			
+			<LabelButton fx:id="exit" onAction="#exit" text="EXIT" />
+		</Group>
+	</VBox>
+
+</AnchorPane>

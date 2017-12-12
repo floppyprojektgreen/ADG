@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import ch.zhaw.students.adgame.ui.component.ResourceView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.layout.HBox?>
+<?import ch.zhaw.students.adgame.ui.component.ScrollPane?>
+<?import ch.zhaw.students.adgame.ui.component.ItemListItem?>
+
+<AnchorPane fx:controller="ch.zhaw.students.adgame.ui.window.ShopController"
+	xmlns:fx="http://javafx.com/fxml/1">
+	
+	<Rectangle fx:id="bg" />
+	
+	<ResourceView fx:id="resource" />
+	
+	<Rectangle fx:id="closeBtn" onMouseClicked="#closeShop" />
+	
+	<ScrollPane fx:id="itemList">
+		<child>
+			<VBox fx:id="itemContainer" fillWidth="true" minWidth="1905" />
+		</child>
+	</ScrollPane>
+</AnchorPane>
+

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.image.ImageView?>
+<?import ch.zhaw.students.adgame.ui.component.NoPaddingLabel?>
+<?import ch.zhaw.students.adgame.ui.component.WeaponDisplay?>
+
+<fx:root xmlns:fx="http://javafx.com/fxml/1" type="AnchorPane">
+	<ImageView fx:id="characterImg" />
+	<Rectangle fx:id="characterRect" fill="TRANSPARENT" strokeType="OUTSIDE" strokeWidth="0"/>
+	<WeaponDisplay fx:id="currentWeapon" onAction="#showWeaponSelection" />
+	
+	<Rectangle fx:id="attackButton" />
+	
+	<NoPaddingLabel fx:id="hitLog" fontSize="31.42" />
+
+	<Rectangle fx:id="healthBar" strokeType="OUTSIDE" strokeWidth="5"/>
+	<Rectangle fx:id="currentHealth" />
+</fx:root>
+

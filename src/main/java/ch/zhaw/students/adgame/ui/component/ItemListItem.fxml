@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import ch.zhaw.students.adgame.ui.component.ResourceView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.geometry.Insets?>
+<?import ch.zhaw.students.adgame.ui.component.NoPaddingLabel?>
+
+<fx:root xmlns:fx="http://javafx.com/fxml/1" type="AnchorPane">
+	<Rectangle fx:id="bg" fill="rgba(0,0,0,0)" />
+	<HBox spacing="15">
+		<padding>
+			<Insets top="15" bottom="15" left="15" right="15" />
+		</padding>
+		
+		<ImageView fx:id="image" />
+		
+		<VBox spacing="5">
+			<NoPaddingLabel fx:id="name" />
+			<NoPaddingLabel fx:id="description" wrapText="true" />
+			<ResourceView fx:id="cost" />
+		</VBox>
+	</HBox>
+</fx:root>
+

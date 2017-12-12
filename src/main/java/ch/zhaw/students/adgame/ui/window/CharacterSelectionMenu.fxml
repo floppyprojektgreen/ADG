@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.layout.HBox?>
+<?import ch.zhaw.students.adgame.ui.component.CharacterSelection?>
+<?import ch.zhaw.students.adgame.ui.component.LabelButton?>
+
+<AnchorPane fx:controller="ch.zhaw.students.adgame.ui.window.CharacterSelectionMenuController"
+	xmlns:fx="http://javafx.com/fxml/1">
+	
+	<LabelButton fx:id="back" onAction="#back" text="BACK" />
+	
+	<LabelButton fx:id="play" onAction="#play" text="START GAME" />
+	
+	<VBox fx:id="characterSelectionsBox">
+		<CharacterSelection />
+		<CharacterSelection />
+		<CharacterSelection />
+		<CharacterSelection />
+		<CharacterSelection />
+		<CharacterSelection />
+		<CharacterSelection />
+		<CharacterSelection />
+	</VBox>
+
+</AnchorPane>

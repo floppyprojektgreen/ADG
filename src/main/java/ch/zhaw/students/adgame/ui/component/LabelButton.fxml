@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+
+<fx:root xmlns:fx="http://javafx.com/fxml/1" type="Group">
+		
+	<Rectangle fill="rgba(0,0,0,255)"/>
+	
+	<Group fx:id="container"
+		onMouseEntered="#increaseByHover"
+		onMouseExited="#decreaseByHover">
+		
+		<Rectangle fx:id="box" />
+		<HBox fx:id="textBox" alignment="CENTER" mouseTransparent="true">
+			<Label fx:id="label" />
+		</HBox>
+	</Group>
+</fx:root>
+
