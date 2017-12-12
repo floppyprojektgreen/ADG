@@ -16,7 +16,6 @@ gradle-app.setting
 
 # Compiled class file
 *.class
-*.iml
 
 # Log file
 *.log
@@ -34,8 +33,11 @@ hs_err_pid*
 
 # IDE Files
 .idea
+*.iml
 .settings
 .project
 .classpath
 out/
 /bin/
+
+.DS_Store
