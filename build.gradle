@@ -1,0 +1,104 @@
+def projectVersion = 'alpha-2.1.1'
+
+apply plugin: 'java-library'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+
+
+    testImplementation 'junit:junit:4.12'
+	testCompile 'org.mockito:mockito-all:2.0.2-beta'
+	testCompile 'org.powermock:powermock-module-junit4:1.7.0RC4'
+	testCompile 'org.powermock:powermock-api-mockito:1.7.0RC4'
+}
+
+sourceSets {
+	main {
+		resources {
+			srcDirs= ["src/main/java"]
+		}
+	}
+}
+
+jar {
+	version = projectVersion
+    
+	manifest {
+		attributes (
+			'Main-Class': 'ch.zhaw.students.adgame.Main'
+		)
+	}
+}
+
+task release(type: Copy) {
+	group = build
+	
+	doFirst {
+		delete "${buildDir}/release/${projectVersion}"
+	}
+
+	dependsOn build
+
+	into "${buildDir}/release/${projectVersion}"
+	into ('resources/') {
+		from "resources"
+		
+		exclude '**/*.xcf'
+		exclude '**/*.psd'
+		exclude '**/.gitkeep'
+		exclude '**/wave/**'
+		exclude '**/mp3/**'
+		exclude '**/*.mp3'
+		
+		includeEmptyDirs = false
+	}
+	into ('config/') {
+		from "config"
+	}
+	from jar
+}
+
+task floppyrelease(type: Copy) {
+	group = build
+	
+	doFirst {
+		delete "${buildDir}/release/floppy-${projectVersion}"
+	}
+
+	dependsOn build
+
+	into "${buildDir}/release/floppy-${projectVersion}"
+	into ('resources/') {
+		from "resources"
+		
+		exclude '**/*.xcf'
+		exclude '**/*.psd'
+		exclude '**/.gitkeep'
+		exclude '**/wave/**'
+		exclude '**/mp3/**'
+		exclude '**/*.wav'
+		exclude '**/Common*.png'
+		exclude '**/Uncommon*.png'
+		exclude '**/Rare*.png'
+		exclude '**/Epic*.png'
+		
+		includeEmptyDirs = false
+	}
+	into ('config/') {
+		from "config"
+	}
+	
+	doLast {
+		ant.replace(file: "${buildDir}/release/floppy-${projectVersion}/config/audio.properties", token: "wav", value: "mp3")
+		ant.replace(file: "${buildDir}/release/floppy-${projectVersion}/config/audio.properties", token: "MainTheme.mp3", value: "FightSound.mp3")
+		ant.propertyfile(file: "${buildDir}/release/floppy-${projectVersion}/config/system.properties") {
+			entry( key: "single_save", value: "true")
+			entry( key: "pre_caching", value: "true")
+		}
+	}
+	
+	from jar
+}
