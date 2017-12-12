@@ -7,8 +7,6 @@ repositories {
 }
 
 dependencies {
-
-
     testImplementation 'junit:junit:4.12'
 	testCompile 'org.mockito:mockito-all:2.0.2-beta'
 	testCompile 'org.powermock:powermock-module-junit4:1.7.0RC4'
@@ -49,8 +47,7 @@ task release(type: Copy) {
 		exclude '**/*.xcf'
 		exclude '**/*.psd'
 		exclude '**/.gitkeep'
-		exclude '**/wave/**'
-		exclude '**/mp3/**'
+		exclude '/doc/**'
 		exclude '**/*.mp3'
 		
 		includeEmptyDirs = false
@@ -77,9 +74,9 @@ task floppyrelease(type: Copy) {
 		exclude '**/*.xcf'
 		exclude '**/*.psd'
 		exclude '**/.gitkeep'
-		exclude '**/wave/**'
-		exclude '**/mp3/**'
 		exclude '**/*.wav'
+		exclude '/doc/**'
+		exclude '**/MainTheme.mp3'
 		exclude '**/Common*.png'
 		exclude '**/Uncommon*.png'
 		exclude '**/Rare*.png'
