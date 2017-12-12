@@ -1,4 +1,4 @@
-# Adventure Dice Game <img src="./Documents/Images/logo.png" height="50">
+# Adventure Dice Game <img src="./resources/doc/logo.png" height="50">
 
 ### by Floppy Projekt Green
 
