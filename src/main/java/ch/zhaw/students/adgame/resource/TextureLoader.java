@@ -1,5 +1,6 @@
 package ch.zhaw.students.adgame.resource;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,8 +22,13 @@ public class TextureLoader {
 		Image image = cache.get(resource);
 		if (image == null) {
 			String path = Texture.getConfiguration(resource);
-			image = new Image("file:" + path, 1280, 1280, true, true);
-			cache.put(resource, image);
+			File file = new File(path);
+			if (file.exists()) {
+				image = new Image(file.toURI().toString(), 1280, 1280, true, true);
+				cache.put(resource, image);
+			} else {
+				image = new Image("file:" + Texture.getConfiguration(null), 1280, 1280, true, true);
+			}
 		}
 		return image;
 	}
