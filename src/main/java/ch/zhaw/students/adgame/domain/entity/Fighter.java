@@ -1,10 +1,9 @@
 package ch.zhaw.students.adgame.domain.entity;
 
-import ch.zhaw.students.adgame.domain.Die;
-
 import java.io.Serializable;
 
-import ch.zhaw.students.adgame.configuration.ResourcesConfiguration;
+import ch.zhaw.students.adgame.configuration.Texture;
+import ch.zhaw.students.adgame.domain.Die;
 import ch.zhaw.students.adgame.domain.Fightable;
 
 /**
@@ -23,7 +22,7 @@ public abstract class Fighter extends Entity implements Fightable, Serializable 
 	private int accuracy;
 
 	public Fighter(String name, int maxHitPoints, int strength, int defense, int accuracy,
-			ResourcesConfiguration textureKey) {
+			Texture textureKey) {
 		super(name, textureKey);
 		this.hitPoints = maxHitPoints;
 		this.strength = strength;

@@ -9,7 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 
-import ch.zhaw.students.adgame.configuration.ResourcesConfiguration;
+import ch.zhaw.students.adgame.configuration.Texture;
 import ch.zhaw.students.adgame.domain.entity.Character;
 import ch.zhaw.students.adgame.domain.entity.Fighter;
 import ch.zhaw.students.adgame.domain.entity.Monster;
@@ -34,8 +34,8 @@ public class FighterTest {
 		when(mockWeapon.getAttackPower()).thenReturn(5);
 		when(mockWeapon.getAccuracy()).thenReturn(6);
 		when(mockArmor.getDefense()).thenReturn(20);
-		this.character = new Character("TestCharacter", 100, 0, 0, 0, 9001, 0, 0, ResourcesConfiguration.PLAYER_PINK);
-		this.monster = new Monster("Monster", 100, 4, 5, 6, ResourcesConfiguration.EMENY_ORC);
+		this.character = new Character("TestCharacter", 100, 0, 0, 0, 9001, 0, 0, Texture.Player.PINK);
+		this.monster = new Monster("Monster", 100, 4, 5, 6, Texture.Enemy.ORC);
 		((Character) this.character).equipWeapon(mockWeapon);
 		((Character) this.character).equipArmor(mockArmor);
 	}

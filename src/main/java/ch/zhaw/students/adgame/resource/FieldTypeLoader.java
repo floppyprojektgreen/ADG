@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ch.zhaw.students.adgame.configuration.FieldConfiguration;
-import ch.zhaw.students.adgame.configuration.ResourcesConfiguration;
+import ch.zhaw.students.adgame.configuration.Texture;
 import ch.zhaw.students.adgame.domain.board.FieldType;
 import ch.zhaw.students.adgame.domain.entity.Monster;
 import ch.zhaw.students.adgame.domain.event.Teleport;
@@ -41,12 +41,14 @@ public class FieldTypeLoader {
 	}
 	
 	private static FieldType createTeleportField(String[] def) {
-		Teleport teleport = new Teleport(ResourcesConfiguration.valueOf(def[3].toUpperCase()));
+		//TODO: add load typing
+		Teleport teleport = new Teleport(Texture.getTextureByName("", def[3].toUpperCase()));
 		return new FieldType(teleport, def[1], Integer.parseInt(def[2]));
 	}
 
 	private static FieldType createMonsterField(String[] def) {
-		Monster monster = new Monster(def[1], Integer.parseInt(def[4]), Integer.parseInt(def[5]), Integer.parseInt(def[6]), Integer.parseInt(def[7]), ResourcesConfiguration.valueOf(def[3].toUpperCase()));
+		//TODO: add load typing
+		Monster monster = new Monster(def[1], Integer.parseInt(def[4]), Integer.parseInt(def[5]), Integer.parseInt(def[6]), Integer.parseInt(def[7]), (Texture.Enemy)Texture.getTextureByName("", def[3].toUpperCase()));
 		return new FieldType(monster, def[1], Integer.parseInt(def[2]));
 	}
 }

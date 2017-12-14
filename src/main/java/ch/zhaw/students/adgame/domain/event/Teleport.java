@@ -2,7 +2,7 @@ package ch.zhaw.students.adgame.domain.event;
 
 import java.io.Serializable;
 
-import ch.zhaw.students.adgame.configuration.ResourcesConfiguration;
+import ch.zhaw.students.adgame.configuration.Texture;
 import ch.zhaw.students.adgame.domain.GameState;
 import ch.zhaw.students.adgame.domain.board.Field;
 import ch.zhaw.students.adgame.domain.entity.Character;
@@ -14,9 +14,9 @@ import ch.zhaw.students.adgame.domain.entity.Character;
 public class Teleport implements Invokable, Serializable {
 	private static final long serialVersionUID = -2592329936364724325L;
 	private Field destinationField;
-	private ResourcesConfiguration textureKey;
+	private Texture textureKey;
 
-	public Teleport(ResourcesConfiguration textureKey) {
+	public Teleport(Texture textureKey) {
 		this.textureKey = textureKey;
 	}
 
@@ -61,7 +61,7 @@ public class Teleport implements Invokable, Serializable {
 	}
 
 	@Override
-	public ResourcesConfiguration getTextureKey() {
+	public Texture getTextureKey() {
 		return textureKey;
 	}
 

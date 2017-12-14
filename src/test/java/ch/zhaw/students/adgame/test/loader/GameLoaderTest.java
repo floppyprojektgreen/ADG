@@ -2,13 +2,15 @@ package ch.zhaw.students.adgame.test.loader;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
+
 import java.io.File;
 import java.io.IOException;
+
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import ch.zhaw.students.adgame.configuration.ResourcesConfiguration;
+import ch.zhaw.students.adgame.configuration.Texture;
 import ch.zhaw.students.adgame.domain.GameState;
 import ch.zhaw.students.adgame.domain.entity.Character;
 import ch.zhaw.students.adgame.loader.GameLoader;
@@ -22,7 +24,7 @@ public class GameLoaderTest {
 	@BeforeClass
 	public static void buildUp() {
 		state = GameState.get();
-		state.init(10, 7, new Character("test", 120, 0, 0, 0, 50, 2, 1, ResourcesConfiguration.PLAYER_PINK), new Character("test2", 120, 0, 0, 0, 100, 7, 5, ResourcesConfiguration.PLAYER_BLUE));
+		state.init(10, 7, new Character("test", 120, 0, 0, 0, 50, 2, 1, Texture.Player.PINK), new Character("test2", 120, 0, 0, 0, 100, 7, 5, Texture.Player.BLUE));
 		file = new File("testState.txt");
 	}
 

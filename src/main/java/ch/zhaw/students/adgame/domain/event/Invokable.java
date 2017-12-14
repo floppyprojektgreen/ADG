@@ -1,6 +1,6 @@
 package ch.zhaw.students.adgame.domain.event;
 
-import ch.zhaw.students.adgame.configuration.ResourcesConfiguration;
+import ch.zhaw.students.adgame.configuration.Texture;
 import ch.zhaw.students.adgame.domain.entity.Character;
 
 /**
@@ -12,5 +12,5 @@ public interface Invokable {
 	/**
 	 * Get the corresponding texture key.
 	 */
-	public ResourcesConfiguration getTextureKey();
+	public Texture getTextureKey();
 }

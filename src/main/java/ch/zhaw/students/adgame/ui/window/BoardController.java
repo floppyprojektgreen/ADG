@@ -7,7 +7,7 @@ import ch.zhaw.students.adgame.audio.AudioHandler;
 import ch.zhaw.students.adgame.audio.AudioTrack;
 import ch.zhaw.students.adgame.configuration.ColorConfiguration;
 import ch.zhaw.students.adgame.configuration.FileExtenstionConfiguration;
-import ch.zhaw.students.adgame.configuration.ResourcesConfiguration;
+import ch.zhaw.students.adgame.configuration.Texture;
 import ch.zhaw.students.adgame.domain.ChangeEvent;
 import ch.zhaw.students.adgame.domain.GameState;
 import ch.zhaw.students.adgame.domain.board.CardinalDirection;
@@ -63,19 +63,19 @@ public class BoardController implements ResizableUI, EventListener {
 		createBinding();
 		
 		move.setFill(ColorLoader.loadColor(ColorConfiguration.BOARD_MENU_MOVE));
-		moveImg.setImage(TextureLoader.loadImage(ResourcesConfiguration.HUD_MENU_MOVE));
+		moveImg.setImage(TextureLoader.loadImage(Texture.Hud.MENU_MOVE));
 		
 		openShop.setFill(ColorLoader.loadColor(ColorConfiguration.BOARD_MENU_SHOP));
-		openShopImg.setImage(TextureLoader.loadImage(ResourcesConfiguration.HUD_MENU_SHOP));
+		openShopImg.setImage(TextureLoader.loadImage(Texture.Hud.MENU_SHOP));
 		
 		endTurn.setFill(ColorLoader.loadColor(ColorConfiguration.BOARD_MENU_ENDTURN));
-		endTurnImg.setImage(TextureLoader.loadImage(ResourcesConfiguration.HUD_MENU_ENDTURN));
+		endTurnImg.setImage(TextureLoader.loadImage(Texture.Hud.MENU_ENDTURN));
 		
 		save.setFill(ColorLoader.loadColor(ColorConfiguration.BOARD_MENU_SAVE));
-		saveImg.setImage(TextureLoader.loadImage(ResourcesConfiguration.HUD_MENU_SAVE));
+		saveImg.setImage(TextureLoader.loadImage(Texture.Hud.MENU_SAVE));
 		
 		exit.setFill(ColorLoader.loadColor(ColorConfiguration.BOARD_MENU_EXIT));
-		exitImg.setImage(TextureLoader.loadImage(ResourcesConfiguration.HUD_MENU_EXIT));
+		exitImg.setImage(TextureLoader.loadImage(Texture.Hud.MENU_EXIT));
 		
 		painter = new BoardPainter(boardCanvas.getGraphicsContext2D(), GameState.get().getBoard(), boardCanvas.getWidth(), boardCanvas.getHeight());
 		painter.start();

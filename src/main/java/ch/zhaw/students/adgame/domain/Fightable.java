@@ -1,6 +1,6 @@
 package ch.zhaw.students.adgame.domain;
 
-import ch.zhaw.students.adgame.configuration.ResourcesConfiguration;
+import ch.zhaw.students.adgame.configuration.Texture;
 
 /**
  * This interface is used for the fighting system. The participants of a battle
@@ -22,7 +22,7 @@ public interface Fightable {
 
 	public int attack(Fightable enemy);
 
-	public ResourcesConfiguration getTextureKey();
+	public Texture getTextureKey();
 
 	public void reduceHitPoints(int damage);
 }

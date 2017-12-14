@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import ch.zhaw.students.adgame.configuration.ResourcesConfiguration;
+import ch.zhaw.students.adgame.configuration.Texture;
 import ch.zhaw.students.adgame.domain.GameState;
 import ch.zhaw.students.adgame.domain.board.Board;
 import ch.zhaw.students.adgame.domain.board.CardinalDirection;
@@ -41,7 +41,7 @@ public class Character extends Fighter implements Serializable{
 	 *
 	 */
 	public Character(String name, int hitPoints, int strength, int defense, int accuracy, int resource, int xPosition, int yPosition,
-			ResourcesConfiguration textureKey) {
+			Texture.Player textureKey) {
 		super(name, hitPoints, strength, defense, accuracy, textureKey);
 		this.resource = resource;
 		this.xPosition = xPosition;

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ch.zhaw.students.adgame.configuration.ItemConfiguration;
-import ch.zhaw.students.adgame.configuration.ResourcesConfiguration;
+import ch.zhaw.students.adgame.configuration.Texture;
 import ch.zhaw.students.adgame.domain.item.Armor;
 import ch.zhaw.students.adgame.domain.item.Item;
 import ch.zhaw.students.adgame.domain.item.Weapon;
@@ -43,13 +43,15 @@ public class ItemLoader {
 	}
 
 	private static Armor createArmor(String[] armorString) {
+		//TODO: add load typing
 		return new Armor(armorString[1], Integer.parseInt(armorString[2]), Integer.parseInt(armorString[4]),
-				ResourcesConfiguration.valueOf(armorString[3].toUpperCase()));
+				(Texture.Item.Equipment.Armor)Texture.getTextureByName("", armorString[3].toUpperCase()));
 	}
 
 	private static Weapon createWeapon(String[] armorString) {
+		//TODO: add load typing
 		return new Weapon(armorString[1], Integer.parseInt(armorString[2]), Integer.parseInt(armorString[4]),
-				Integer.parseInt(armorString[5]), ResourcesConfiguration.valueOf(armorString[3].toUpperCase()));
+				Integer.parseInt(armorString[5]), (Texture.Item.Equipment.Weapon)Texture.getTextureByName("", armorString[3].toUpperCase()));
 	}
 
 }

@@ -3,7 +3,7 @@ package ch.zhaw.students.adgame.ui.window;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import ch.zhaw.students.adgame.configuration.ColorConfiguration;
-import ch.zhaw.students.adgame.configuration.ResourcesConfiguration;
+import ch.zhaw.students.adgame.configuration.Texture;
 import ch.zhaw.students.adgame.domain.GameState;
 import ch.zhaw.students.adgame.domain.board.Board;
 import ch.zhaw.students.adgame.domain.board.CardinalDirection;
@@ -151,8 +151,8 @@ public class BoardPainter extends AnimationTimer {
 		double space = shiftX * 0.05; //simplified: (shiftX - size) / 2
 		double needleCenter = shiftX * 0.5; //simplified: (size/2) + space
 		
-		gc.drawImage(TextureLoader.loadImage(ResourcesConfiguration.BOARD_COMPASS), space, space, size, size);
-		paintImageAngled(TextureLoader.loadImage(ResourcesConfiguration.BOARD_COMPASS_NEEDLE), compassNeedle.getAngle(), needleCenter, needleCenter, size, size);
+		gc.drawImage(TextureLoader.loadImage(Texture.General.BOARD_COMPASS), space, space, size, size);
+		paintImageAngled(TextureLoader.loadImage(Texture.General.BOARD_COMPASS_NEEDLE), compassNeedle.getAngle(), needleCenter, needleCenter, size, size);
 	}
 	
 	@Override

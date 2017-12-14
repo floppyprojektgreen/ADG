@@ -4,8 +4,7 @@ import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Optional;
 
-import ch.zhaw.students.adgame.configuration.ResourcesConfiguration;
-import ch.zhaw.students.adgame.domain.item.Item;
+import ch.zhaw.students.adgame.configuration.Texture;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableMap;
 import javafx.fxml.FXML;
@@ -26,7 +25,7 @@ public class CharacterSelection extends AnchorPane {
 	@FXML
 	private ComboBox<String> colorSelection;
 	
-	private ObservableMap<String, Optional<ResourcesConfiguration>> colorSelectionModel;
+	private ObservableMap<String, Optional<Texture.Player>> colorSelectionModel;
 	
 	/**
 	 * Creates a selection option for one character.
@@ -55,14 +54,14 @@ public class CharacterSelection extends AnchorPane {
 		String defaultValue = "Not Selected";
 		colorSelectionModel.put(defaultValue, Optional.empty());
 		
-		colorSelectionModel.put("Blue", Optional.ofNullable(ResourcesConfiguration.PLAYER_BLUE));
-		colorSelectionModel.put("Green", Optional.ofNullable(ResourcesConfiguration.PLAYER_GREEN));
-		colorSelectionModel.put("Lime", Optional.ofNullable(ResourcesConfiguration.PLAYER_LIME));
-		colorSelectionModel.put("Orange", Optional.ofNullable(ResourcesConfiguration.PLAYER_ORANGE));
-		colorSelectionModel.put("Pink", Optional.ofNullable(ResourcesConfiguration.PLAYER_PINK));
-		colorSelectionModel.put("Purple", Optional.ofNullable(ResourcesConfiguration.PLAYER_PURPLE));
-		colorSelectionModel.put("Red", Optional.ofNullable(ResourcesConfiguration.PLAYER_RED));
-		colorSelectionModel.put("Turquoise", Optional.ofNullable(ResourcesConfiguration.PLAYER_TURQUOISE));
+		colorSelectionModel.put("Blue", Optional.ofNullable(Texture.Player.BLUE));
+		colorSelectionModel.put("Green", Optional.ofNullable(Texture.Player.GREEN));
+		colorSelectionModel.put("Lime", Optional.ofNullable(Texture.Player.LIME));
+		colorSelectionModel.put("Orange", Optional.ofNullable(Texture.Player.ORANGE));
+		colorSelectionModel.put("Pink", Optional.ofNullable(Texture.Player.PINK));
+		colorSelectionModel.put("Purple", Optional.ofNullable(Texture.Player.PURPLE));
+		colorSelectionModel.put("Red", Optional.ofNullable(Texture.Player.RED));
+		colorSelectionModel.put("Turquoise", Optional.ofNullable(Texture.Player.TURQUOISE));
 		
 		colorSelection.getItems().addAll(colorSelectionModel.keySet());
 		colorSelection.setValue(defaultValue);
@@ -84,7 +83,7 @@ public class CharacterSelection extends AnchorPane {
 		return name.getText();
 	}
 	
-	public Optional<ResourcesConfiguration> getSelectedColor() {
+	public Optional<Texture.Player> getSelectedColor() {
 		return colorSelectionModel.get(colorSelection.getValue());
 	}
 }
