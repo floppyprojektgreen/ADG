@@ -15,7 +15,7 @@ public enum ResourcesConfiguration {
 	EMENY_ORC("enemy_orc"),
 	EMENY_SKELETON("enemy_skeleton"),
 	EMENY_WARCAMP_BANNER("enemy_warcamp_banner"),
-	EQ_NO_WEAPON("eqp_no_weapon"),
+	EQ_NO_WEAPON("wpn_no_weapon"),
 	EQ_ARMOR_BARREL("armor_barrel"),
 	EQ_ARMOR_GARMENT("armor_garment"),
 	EQ_ARMOR_LEATHER("armor_leather"),
