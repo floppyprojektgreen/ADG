@@ -203,7 +203,7 @@ public interface Texture {
 		try {
 			Class<? extends T> textureClass = typeRestriction.isEnum()
 					? typeRestriction
-					: Class.forName(typeRestriction.getTypeName() + "$" + texture.substring(0, valStartIndex)).asSubclass(typeRestriction);
+					: Class.forName(typeRestriction.getTypeName() + "$" + texture.substring(0, 1).toUpperCase() + texture.substring(1, valStartIndex).toLowerCase()).asSubclass(typeRestriction);
 			
 			return Arrays.stream(textureClass.getEnumConstants())
 				.filter(t -> t.toString().equalsIgnoreCase(texture.substring(valStartIndex + 1).trim()))
