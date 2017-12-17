@@ -3,8 +3,10 @@ package ch.zhaw.students.adgame.configuration;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.Properties;
 
 /**
@@ -141,6 +143,7 @@ public interface Texture {
 			}
 		}
 	}
+	
 	public enum Enemy implements Texture {
 		ORC("enemy_orc"),
 		SKELETON("enemy_skeleton"),
@@ -174,9 +177,10 @@ public interface Texture {
 			keyMap.put(this, key);
 		}
 	}
+
 	
-	static Properties resourceProp = new XProperties();;
-	static Map<Texture, String> keyMap = new HashMap<>();
+	static Properties resourceProp = new XProperties();
+	static Map<Texture, String> keyMap = new HashMap<>();	
 	
 	/**
 	 * Gets the loaded configuration for the given configuration key.
@@ -189,11 +193,25 @@ public interface Texture {
 				e.printStackTrace();
 			}
 		}
+		
 		return resourceProp.getProperty(keyMap.getOrDefault(configKey, ""), resourceProp.getProperty("tex_missing"));
 	}
 	
-	public static Texture getTextureByName(String type, String textureName) {
-		//TODO: load correctly;
+	public static <T extends Texture> T getTextureByExternalKey(Class<T> typeRestriction, String texture) {
+		int valStartIndex = texture.lastIndexOf(".");
+		
+		try {
+			Class<? extends T> textureClass = typeRestriction.isEnum()
+					? typeRestriction
+					: Class.forName(typeRestriction.getTypeName() + "$" + texture.substring(0, valStartIndex)).asSubclass(typeRestriction);
+			
+			return Arrays.stream(textureClass.getEnumConstants())
+				.filter(t -> t.toString().equalsIgnoreCase(texture.substring(valStartIndex + 1).trim()))
+				.findFirst().get();
+		} catch (ClassNotFoundException | StringIndexOutOfBoundsException e) {
+			e.printStackTrace();
+		} catch (NoSuchElementException e) {}
+		
 		return null;
 	}
 }

@@ -14,9 +14,9 @@ import ch.zhaw.students.adgame.domain.entity.Character;
 public class Teleport implements Invokable, Serializable {
 	private static final long serialVersionUID = -2592329936364724325L;
 	private Field destinationField;
-	private Texture textureKey;
+	private Texture.Field textureKey;
 
-	public Teleport(Texture textureKey) {
+	public Teleport(Texture.Field textureKey) {
 		this.textureKey = textureKey;
 	}
 

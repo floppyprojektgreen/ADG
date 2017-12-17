@@ -41,14 +41,13 @@ public class FieldTypeLoader {
 	}
 	
 	private static FieldType createTeleportField(String[] def) {
-		//TODO: add load typing
-		Teleport teleport = new Teleport(Texture.getTextureByName("", def[3].toUpperCase()));
+		Teleport teleport = new Teleport(Texture.getTextureByExternalKey(Texture.Field.class, def[3]));
 		return new FieldType(teleport, def[1], Integer.parseInt(def[2]));
 	}
 
 	private static FieldType createMonsterField(String[] def) {
-		//TODO: add load typing
-		Monster monster = new Monster(def[1], Integer.parseInt(def[4]), Integer.parseInt(def[5]), Integer.parseInt(def[6]), Integer.parseInt(def[7]), (Texture.Enemy)Texture.getTextureByName("", def[3].toUpperCase()));
+		Monster monster = new Monster(def[1], Integer.parseInt(def[4]), Integer.parseInt(def[5]), Integer.parseInt(def[6]), Integer.parseInt(def[7]),
+				Texture.getTextureByExternalKey(Texture.Enemy.class, def[3]));
 		return new FieldType(monster, def[1], Integer.parseInt(def[2]));
 	}
 }

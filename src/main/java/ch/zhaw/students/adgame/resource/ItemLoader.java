@@ -43,15 +43,13 @@ public class ItemLoader {
 	}
 
 	private static Armor createArmor(String[] armorString) {
-		//TODO: add load typing
 		return new Armor(armorString[1], Integer.parseInt(armorString[2]), Integer.parseInt(armorString[4]),
-				(Texture.Item.Equipment.Armor)Texture.getTextureByName("", armorString[3].toUpperCase()));
+				Texture.getTextureByExternalKey(Texture.Item.Equipment.Armor.class, armorString[3]));
 	}
 
 	private static Weapon createWeapon(String[] armorString) {
-		//TODO: add load typing
 		return new Weapon(armorString[1], Integer.parseInt(armorString[2]), Integer.parseInt(armorString[4]),
-				Integer.parseInt(armorString[5]), (Texture.Item.Equipment.Weapon)Texture.getTextureByName("", armorString[3].toUpperCase()));
+				Integer.parseInt(armorString[5]), Texture.getTextureByExternalKey(Texture.Item.Equipment.Weapon.class, armorString[3]));
 	}
 
 }
