@@ -5,7 +5,7 @@ import java.io.IOException;
 
 import ch.zhaw.students.adgame.configuration.ColorConfiguration;
 import ch.zhaw.students.adgame.configuration.FileExtenstionConfiguration;
-import ch.zhaw.students.adgame.configuration.ResourcesConfiguration;
+import ch.zhaw.students.adgame.configuration.Texture;
 import ch.zhaw.students.adgame.loader.GameLoader;
 import ch.zhaw.students.adgame.resource.ColorLoader;
 import ch.zhaw.students.adgame.resource.TextureLoader;
@@ -43,7 +43,7 @@ public class MainMenuController implements ResizableUI {
 	
 	@FXML
 	private void initialize() {
-		logo.setImage(TextureLoader.loadImage(ResourcesConfiguration.LOGO));
+		logo.setImage(TextureLoader.loadImage(Texture.General.LOGO));
 		
 		play.setFill(ColorLoader.loadColor(ColorConfiguration.MAIN_MENU_PLAY));
 		load.setFill(ColorLoader.loadColor(ColorConfiguration.MAIN_MENU_LOAD));

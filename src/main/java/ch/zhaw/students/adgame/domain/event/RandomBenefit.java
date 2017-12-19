@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-import ch.zhaw.students.adgame.configuration.ResourcesConfiguration;
+import ch.zhaw.students.adgame.configuration.Texture;
 import ch.zhaw.students.adgame.domain.RoundClock;
 import ch.zhaw.students.adgame.domain.entity.Character;
 import ch.zhaw.students.adgame.domain.item.Item;
@@ -19,9 +19,9 @@ public class RandomBenefit implements Invokable, Serializable {
 
 	private int resources;
 	private List<Item> items;
-	private ResourcesConfiguration textureKey;
+	private Texture textureKey;
 
-	public RandomBenefit(int resources, List<Item> items, ResourcesConfiguration textureKey) {
+	public RandomBenefit(int resources, List<Item> items, Texture textureKey) {
 		this.resources = resources;
 		this.items = items;
 		this.textureKey = textureKey;
@@ -29,7 +29,7 @@ public class RandomBenefit implements Invokable, Serializable {
 
 	public RandomBenefit(int rounds) {
 		this(ThreadLocalRandom.current().nextInt(rounds, rounds * 5), new ArrayList<>(),
-				ResourcesConfiguration.FIELD_CHEST);
+				Texture.Field.CHEST);
 	}
 
 	public RandomBenefit() {
@@ -61,7 +61,7 @@ public class RandomBenefit implements Invokable, Serializable {
 	}
 
 	@Override
-	public ResourcesConfiguration getTextureKey() {
+	public Texture getTextureKey() {
 		return textureKey;
 	}
 }

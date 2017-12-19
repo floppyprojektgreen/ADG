@@ -2,7 +2,7 @@ package ch.zhaw.students.adgame.domain.item;
 
 import java.io.Serializable;
 
-import ch.zhaw.students.adgame.configuration.ResourcesConfiguration;
+import ch.zhaw.students.adgame.configuration.Texture;
 
 /**
  * This class is used for the battle system to determine the strength of a
@@ -14,7 +14,7 @@ public class Weapon extends Equipment implements Serializable {
 	private int attackPower;
 	private int accuracy;
 
-	public Weapon(String name, int cost, int attackPower, int accuracy, ResourcesConfiguration textureKey) {
+	public Weapon(String name, int cost, int attackPower, int accuracy, Texture.Item.Equipment.Weapon textureKey) {
 		super(name, cost, textureKey);
 		this.attackPower = attackPower;
 		this.accuracy = accuracy;

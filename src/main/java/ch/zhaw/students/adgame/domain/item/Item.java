@@ -2,7 +2,7 @@ package ch.zhaw.students.adgame.domain.item;
 
 import java.io.Serializable;
 
-import ch.zhaw.students.adgame.configuration.ResourcesConfiguration;
+import ch.zhaw.students.adgame.configuration.Texture;
 
 /**
  * Abstract representation of item.
@@ -11,9 +11,9 @@ public abstract class Item implements Serializable {
 	private static final long serialVersionUID = 9054086180633388830L;
 	private String name;
 	private int cost;
-	private ResourcesConfiguration textureKey;
+	private Texture textureKey;
 
-	public Item(String name, int cost, ResourcesConfiguration textureKey) {
+	public Item(String name, int cost, Texture.Item textureKey) {
 		super();
 		this.name = name;
 		this.cost = cost;
@@ -32,7 +32,7 @@ public abstract class Item implements Serializable {
 		return cost;
 	}
 
-	public ResourcesConfiguration getTextureKey() {
+	public Texture getTextureKey() {
 		return textureKey;
 	}
 

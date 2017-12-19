@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import ch.zhaw.students.adgame.configuration.ResourcesConfiguration;
+import ch.zhaw.students.adgame.configuration.Texture;
 import ch.zhaw.students.adgame.domain.event.Invokable;
 import ch.zhaw.students.adgame.domain.item.Item;
 
@@ -20,7 +20,7 @@ public class Monster extends Fighter implements Invokable, Serializable {
 	private boolean isReadyForBattle;
 
 	public Monster(String name, int hitPoints, int strength, int defense, int accuracy,
-			ResourcesConfiguration textureKey) {
+			Texture.Enemy textureKey) {
 		super(name, hitPoints, strength, defense, accuracy, textureKey);
 		rewards = new ArrayList<>();
 	}

@@ -3,7 +3,7 @@ package ch.zhaw.students.adgame.ui.component;
 import java.io.IOException;
 import java.util.Optional;
 
-import ch.zhaw.students.adgame.configuration.ResourcesConfiguration;
+import ch.zhaw.students.adgame.configuration.Texture;
 import ch.zhaw.students.adgame.domain.item.Weapon;
 import ch.zhaw.students.adgame.resource.TextureLoader;
 import ch.zhaw.students.adgame.ui.event.AdditionalInfoMouseEvent;
@@ -69,7 +69,7 @@ public class WeaponDisplay extends AnchorPane {
 	private void changeWeapon(Weapon weapon) {
 		weaponImg.setImage(TextureLoader.loadImage(weapon != null
 				? weapon.getTextureKey()
-				: ResourcesConfiguration.EQ_NO_WEAPON));
+				: Texture.Item.Equipment.Weapon.General.NO_WEAPON));
 	}
 
 	public ObjectProperty<EventHandler<AdditionalInfoMouseEvent<Optional<Weapon>>>> onActionProperty() {

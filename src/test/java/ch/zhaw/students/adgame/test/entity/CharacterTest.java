@@ -15,7 +15,7 @@ import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
-import ch.zhaw.students.adgame.configuration.ResourcesConfiguration;
+import ch.zhaw.students.adgame.configuration.Texture;
 import ch.zhaw.students.adgame.domain.GameState;
 import ch.zhaw.students.adgame.domain.board.Board;
 import ch.zhaw.students.adgame.domain.board.CardinalDirection;
@@ -84,21 +84,21 @@ public class CharacterTest {
 
 		when(mockArmor.getDefense()).thenReturn(20);
 
-		characterAtOrigin = new Character("Origin", 9001, 0, 0, 0, 9001, 0, 0, ResourcesConfiguration.PLAYER_GREEN);
+		characterAtOrigin = new Character("Origin", 9001, 0, 0, 0, 9001, 0, 0, Texture.Player.GREEN);
 		characterAtUpperRightCorner = new Character("Upper Right Corner", 9001, 0, 0, 0, 9001, 9, 0,
-				ResourcesConfiguration.PLAYER_GREEN);
-		characterInMiddleOfBoardOdd = new Character("Middle", 9001, 0, 0, 0, 9001, 5, 5, ResourcesConfiguration.PLAYER_GREEN);
-		characterAtLeftBoundary = new Character("Left", 9001, 0, 0, 0, 9001, 0, 5, ResourcesConfiguration.PLAYER_GREEN);
-		characterAtRightBoundary = new Character("Right", 9001, 0, 0, 0, 9001, 9, 5, ResourcesConfiguration.PLAYER_GREEN);
-		characterAtLowerBoundaryOdd = new Character("Lower", 9001, 0, 0, 0, 9001, 5, 9, ResourcesConfiguration.PLAYER_GREEN);
-		characterAtUpperBoundaryOdd = new Character("Upper", 9001, 0, 0, 0, 9001, 5, 0, ResourcesConfiguration.PLAYER_GREEN);
+				Texture.Player.GREEN);
+		characterInMiddleOfBoardOdd = new Character("Middle", 9001, 0, 0, 0, 9001, 5, 5, Texture.Player.GREEN);
+		characterAtLeftBoundary = new Character("Left", 9001, 0, 0, 0, 9001, 0, 5, Texture.Player.GREEN);
+		characterAtRightBoundary = new Character("Right", 9001, 0, 0, 0, 9001, 9, 5, Texture.Player.GREEN);
+		characterAtLowerBoundaryOdd = new Character("Lower", 9001, 0, 0, 0, 9001, 5, 9, Texture.Player.GREEN);
+		characterAtUpperBoundaryOdd = new Character("Upper", 9001, 0, 0, 0, 9001, 5, 0, Texture.Player.GREEN);
 
 		characterInMiddleOfBoardEven = new Character("Middle (even)", 9001, 0, 0, 0, 9001, 4, 4,
-				ResourcesConfiguration.PLAYER_GREEN);
+				Texture.Player.GREEN);
 		characterAtLowerBoundaryEven = new Character("Lower (even)", 9001, 0, 0, 0, 9001, 4, 9,
-				ResourcesConfiguration.PLAYER_GREEN);
+				Texture.Player.GREEN);
 		characterAtUpperBoundaryEven = new Character("Upper (even)", 9001, 0, 0, 0, 9001, 4, 0,
-				ResourcesConfiguration.PLAYER_GREEN);
+				Texture.Player.GREEN);
 	}
 
 	@Test
@@ -233,17 +233,17 @@ public class CharacterTest {
 	@Test
 	public void testReduceRessources() {
 		// test subtract exact amount of resources
-		Character richCharacter = new Character("Origin", 9001, 0, 0, 0, 10_000, 0, 0, ResourcesConfiguration.PLAYER_GREEN);
+		Character richCharacter = new Character("Origin", 9001, 0, 0, 0, 10_000, 0, 0, Texture.Player.GREEN);
 		richCharacter.reduceResources(10_000);
 		Assert.assertEquals(0, richCharacter.getResource());
 
 		// test subtract more than amount of resources
-		richCharacter = new Character("Origin", 9001, 0, 0, 0, 10_000, 0, 0, ResourcesConfiguration.PLAYER_GREEN);
+		richCharacter = new Character("Origin", 9001, 0, 0, 0, 10_000, 0, 0, Texture.Player.GREEN);
 		richCharacter.reduceResources(12_000);
 		Assert.assertEquals(0, richCharacter.getResource());
 
 		// test negative values
-		richCharacter = new Character("Origin", 9001, 0, 0, 0, 10_000, 0, 0, ResourcesConfiguration.PLAYER_GREEN);
+		richCharacter = new Character("Origin", 9001, 0, 0, 0, 10_000, 0, 0, Texture.Player.GREEN);
 		richCharacter.reduceResources(-5_000);
 		Assert.assertEquals(5_000, richCharacter.getResource());
 	}
@@ -251,19 +251,19 @@ public class CharacterTest {
 	@Test
 	public void testAddResources() {
 		// Test add resources
-		Character poorCharacter = new Character("Origin", 9001, 0, 0, 0, 0, 0, 0, ResourcesConfiguration.PLAYER_GREEN);
+		Character poorCharacter = new Character("Origin", 9001, 0, 0, 0, 0, 0, 0, Texture.Player.GREEN);
 		poorCharacter.addResources(10_000);
 		Assert.assertEquals(10_000, poorCharacter.getResource());
 
 		// Test add negative values
-		poorCharacter = new Character("Origin", 9001, 0, 0, 0, 0, 0, 0, ResourcesConfiguration.PLAYER_GREEN);
+		poorCharacter = new Character("Origin", 9001, 0, 0, 0, 0, 0, 0, Texture.Player.GREEN);
 		poorCharacter.addResources(-10_000);
 		Assert.assertEquals(10_000, poorCharacter.getResource());
 	}
 
 	@Test
 	public void testEquipWeapon() {
-		Character testCharacter = new Character("test", 100, 0, 0, 0, 100, 0, 0, ResourcesConfiguration.PLAYER_BLUE);
+		Character testCharacter = new Character("test", 100, 0, 0, 0, 100, 0, 0, Texture.Player.GREEN);
 		assertEquals(0, testCharacter.getStrength());
 		assertEquals(0, testCharacter.getAccuracy());
 		testCharacter.equipWeapon(mockWeapon);
@@ -276,7 +276,7 @@ public class CharacterTest {
 
 	@Test
 	public void testEquipArmor() {
-		Character testCharacter = new Character("test", 100, 0, 0, 0, 100, 0, 0, ResourcesConfiguration.PLAYER_GREEN);
+		Character testCharacter = new Character("test", 100, 0, 0, 0, 100, 0, 0, Texture.Player.GREEN);
 		assertEquals(0, testCharacter.getDefense());
 		testCharacter.equipArmor(mockArmor);
 		assertEquals(20, testCharacter.getDefense());

@@ -10,7 +10,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 
-import ch.zhaw.students.adgame.configuration.ResourcesConfiguration;
+import ch.zhaw.students.adgame.configuration.Texture;
 import ch.zhaw.students.adgame.domain.GameState;
 import ch.zhaw.students.adgame.domain.board.Board;
 import ch.zhaw.students.adgame.domain.board.Field;
@@ -38,11 +38,11 @@ public class TeleportTest {
 	@Before
 	public void setUp() {
 		mockCharacterToTeleport = mock(Character.class);
-		monster = new Monster("Orc", 0, 0, 0, 0, ResourcesConfiguration.EMENY_ORC);
+		monster = new Monster("Orc", 0, 0, 0, 0, Texture.Enemy.ORC);
 		monsterFieldType = new FieldType(monster, "monster field", 9001);
 		board1 = new Board(2, 2);
 		board2 = new Board(2, 2);
-		teleport = new Teleport(ResourcesConfiguration.FIELD_TELEPORTER);
+		teleport = new Teleport(Texture.Field.TELEPORTER);
 		characterList1 = new ArrayList<>();
 		characterList2 = new ArrayList<>();
 		characterList1.add(mockCharacterToTeleport);

@@ -5,7 +5,7 @@ import java.util.stream.Stream;
 
 import ch.zhaw.students.adgame.configuration.CharacterConfiguration;
 import ch.zhaw.students.adgame.configuration.ColorConfiguration;
-import ch.zhaw.students.adgame.configuration.ResourcesConfiguration;
+import ch.zhaw.students.adgame.configuration.Texture;
 import ch.zhaw.students.adgame.domain.GameState;
 import ch.zhaw.students.adgame.domain.entity.Character;
 import ch.zhaw.students.adgame.resource.CharacterLoader;
@@ -86,7 +86,7 @@ public class CharacterSelectionMenuController implements ResizableUI {
 		return getCharacterSelections().filter(cs -> cs.getSelectedColor().isPresent()).count();
 	}
 	
-	private Character createCharacter(String name, ResourcesConfiguration color, int charIndex) {
+	private Character createCharacter(String name, Texture.Player color, int charIndex) {
 		return new Character(name,
 				CharacterLoader.loadProperty(CharacterConfiguration.HEALTH),
 				CharacterLoader.loadProperty(CharacterConfiguration.BASE_STRENGTH),

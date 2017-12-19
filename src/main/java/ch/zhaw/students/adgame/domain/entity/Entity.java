@@ -2,7 +2,7 @@ package ch.zhaw.students.adgame.domain.entity;
 
 import java.io.Serializable;
 
-import ch.zhaw.students.adgame.configuration.ResourcesConfiguration;
+import ch.zhaw.students.adgame.configuration.Texture;
 
 /**
  * This class is an abstract representation of anything from an immovable to
@@ -11,9 +11,9 @@ import ch.zhaw.students.adgame.configuration.ResourcesConfiguration;
 public abstract class Entity implements Serializable {
 	private static final long serialVersionUID = -565506035009241806L;
 	protected String name;
-	private ResourcesConfiguration textureKey;
+	private Texture textureKey;
 
-	public Entity(String name, ResourcesConfiguration textureKey) {
+	public Entity(String name, Texture textureKey) {
 		this.name = name;
 		this.textureKey = textureKey;
 	}
@@ -26,7 +26,7 @@ public abstract class Entity implements Serializable {
 		this.name = name;
 	}
 
-	public ResourcesConfiguration getTextureKey() {
+	public Texture getTextureKey() {
 		return textureKey;
 	}
 }
