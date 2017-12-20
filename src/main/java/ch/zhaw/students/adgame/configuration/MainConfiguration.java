@@ -27,4 +27,8 @@ public interface MainConfiguration {
 	
 	/** system configuration file path */
 	public static final String SYSTEM_CONFIGURATION = CONFIGURATION_DIR + "system.properties";
+	
+	public static void reloadConfigurationFiles() {
+		Texture.loadProperty();
+	}
 }

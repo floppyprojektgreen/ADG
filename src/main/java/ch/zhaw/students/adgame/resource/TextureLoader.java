@@ -32,4 +32,11 @@ public class TextureLoader {
 		}
 		return image;
 	}
+	
+	/**
+	 * clear everything in the texture cache.
+	 */
+	public static void clearCache() {
+		cache.clear();
+	}
 }

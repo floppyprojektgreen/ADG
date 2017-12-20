@@ -11,9 +11,11 @@ import java.util.Map;
 import ch.zhaw.students.adgame.audio.AudioHandler;
 import ch.zhaw.students.adgame.audio.AudioTrack;
 import ch.zhaw.students.adgame.configuration.FileExtenstionConfiguration;
+import ch.zhaw.students.adgame.configuration.MainConfiguration;
 import ch.zhaw.students.adgame.configuration.SystemConfiguration;
 import ch.zhaw.students.adgame.domain.ChangeEvent;
 import ch.zhaw.students.adgame.domain.GameState;
+import ch.zhaw.students.adgame.resource.ResourceCacheOrganizer;
 import javafx.application.Platform;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXMLLoader;
@@ -21,6 +23,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCombination;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.StackPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -69,8 +72,10 @@ public class WindowHandler {
 		currentStackEventListeners = new HashMap<>();
 		
 		primaryStage.setScene(new Scene(stack));
-		primaryStage.setFullScreen(true);
+//		primaryStage.setFullScreen(true);
 		primaryStage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
+		
+		primaryStage.getScene().addEventFilter(KeyEvent.KEY_PRESSED, this::keyEventHandler);
 		
 		primaryStage.widthProperty().addListener(this::resizeListener);
 		primaryStage.heightProperty().addListener(this::resizeListener);
@@ -78,6 +83,18 @@ public class WindowHandler {
 		GameState.get().registerListener(this::gameChangeListener);
 		
 		return true;
+	}
+	
+	private void keyEventHandler(KeyEvent keyEvent) {
+		switch (keyEvent.getCode()) {
+		case F12:
+			MainConfiguration.reloadConfigurationFiles();
+			ResourceCacheOrganizer.clearCache();
+			keyEvent.consume();
+			break;
+		default:
+			break;
+		}
 	}
 	
 	private void gameChangeListener(ChangeEvent event) {

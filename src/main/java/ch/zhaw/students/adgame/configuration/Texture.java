@@ -187,16 +187,24 @@ public interface Texture {
 	 */
 	public static String getConfiguration(Texture configKey) {
 		if (resourceProp.isEmpty()) {
-			try (InputStream in = new FileInputStream(MainConfiguration.RESOURCE_CONFIGURATION)) {
-				resourceProp.load(in);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+			loadProperty();
 		}
 		
 		return resourceProp.getProperty(keyMap.getOrDefault(configKey, ""), resourceProp.getProperty("tex_missing"));
 	}
 	
+	public static void loadProperty() {
+		try (InputStream in = new FileInputStream(MainConfiguration.RESOURCE_CONFIGURATION)) {
+			resourceProp.clear();
+			resourceProp.load(in);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * Gets the Texture Enumeration Constant for the given supertype and the given texture definition.
+	 */
 	public static <T extends Texture> T getTextureByExternalKey(Class<T> typeRestriction, String texture) {
 		int valStartIndex = texture.lastIndexOf(".");
 		
