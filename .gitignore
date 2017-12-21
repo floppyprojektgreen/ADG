@@ -19,6 +19,7 @@ gradle-app.setting
 
 # Log file
 *.log
+/log/
 
 # Package Files
 *.jar

@@ -10,7 +10,8 @@ import java.util.Properties;
  */
 public enum SystemConfiguration {
 	SINGLE_SAVE("single_save"),
-	PRE_CACHING("pre_caching");
+	PRE_CACHING("pre_caching"),
+	DEV_ENV("dev_env");
 	
 	public static final String SAVE_FILE = "save.adg";
 	

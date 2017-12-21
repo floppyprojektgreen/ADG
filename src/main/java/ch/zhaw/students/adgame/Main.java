@@ -1,6 +1,7 @@
 package ch.zhaw.students.adgame;
 
 import ch.zhaw.students.adgame.configuration.SystemConfiguration;
+import ch.zhaw.students.adgame.logging.LoggingHandler;
 import ch.zhaw.students.adgame.resource.CacheLoader;
 import ch.zhaw.students.adgame.ui.UserInterface;
 import ch.zhaw.students.adgame.ui.WindowHandler;
@@ -30,6 +31,10 @@ public class Main extends Application {
 	 * Launches the javafx application.
 	 */
 	public static void main(String[] args) {
-		launch(args);
+		try {
+			launch(args);
+		} catch (Exception e) {
+			LoggingHandler.log(e);
+		}
 	}
 }
