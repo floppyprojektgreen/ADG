@@ -18,6 +18,11 @@ import javafx.stage.Stage;
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+		Thread.currentThread().setUncaughtExceptionHandler((thread, t) -> {
+			LoggingHandler.log("Uncaught Exception in Application", Level.SEVERE);
+			LoggingHandler.log(t, Level.SEVERE);
+        });
+		
 		if (SystemConfiguration.isSet(SystemConfiguration.PRE_CACHING)) {
 			CacheLoader.initializeAllCachesInLoaders();
 		}
@@ -33,10 +38,6 @@ public class Main extends Application {
 	 * Launches the javafx application.
 	 */
 	public static void main(String[] args) {
-		try {
-			launch(args);
-		} catch (Exception e) {
-			LoggingHandler.log(e, Level.SEVERE);
-		}
+		launch(args);
 	}
 }

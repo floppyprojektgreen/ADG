@@ -37,9 +37,9 @@ public class LoggingHandler {
 		LOGGER.log(level, msg);
 	}
 	
-	public static void log(Exception e, Level level) {
+	public static void log(Throwable t, Level level) {
 		MessageBuilder mb = new MessageBuilder(System.out);
-		e.printStackTrace(mb);
+		t.printStackTrace(mb);
 		log(mb.getMessage(), level);
 	}
 	
