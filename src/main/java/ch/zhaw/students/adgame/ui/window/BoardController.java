@@ -2,6 +2,7 @@ package ch.zhaw.students.adgame.ui.window;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.logging.Level;
 
 import ch.zhaw.students.adgame.audio.AudioHandler;
 import ch.zhaw.students.adgame.audio.AudioTrack;
@@ -12,6 +13,7 @@ import ch.zhaw.students.adgame.domain.ChangeEvent;
 import ch.zhaw.students.adgame.domain.GameState;
 import ch.zhaw.students.adgame.domain.board.CardinalDirection;
 import ch.zhaw.students.adgame.loader.GameSaver;
+import ch.zhaw.students.adgame.logging.LoggingHandler;
 import ch.zhaw.students.adgame.resource.ColorLoader;
 import ch.zhaw.students.adgame.resource.TextureLoader;
 import ch.zhaw.students.adgame.ui.EventListener;
@@ -170,7 +172,8 @@ public class BoardController implements ResizableUI, EventListener {
 			try {
 				GameSaver.saveGame(selectedFile);
 			} catch (IOException e) {
-				e.printStackTrace();
+				//TODO: inform user that save did not work
+				LoggingHandler.log(e, Level.WARNING);
 			}
 		}
 	}

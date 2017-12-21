@@ -4,6 +4,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
+import java.util.logging.Level;
+
+import ch.zhaw.students.adgame.logging.LoggingHandler;
 
 /**
  * Enumeration with keys for the character configuration file.
@@ -32,7 +35,7 @@ public enum CharacterConfiguration {
 		try (InputStream in = new FileInputStream(MainConfiguration.CHARACTER_CONFIGURATION)) {
 			characterProp.load(in);
 		} catch (IOException e) {
-			e.printStackTrace();
+			LoggingHandler.log(e, Level.SEVERE);
 		}
 	}
 	

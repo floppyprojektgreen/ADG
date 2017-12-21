@@ -1,5 +1,7 @@
 package ch.zhaw.students.adgame;
 
+import java.util.logging.Level;
+
 import ch.zhaw.students.adgame.configuration.SystemConfiguration;
 import ch.zhaw.students.adgame.logging.LoggingHandler;
 import ch.zhaw.students.adgame.resource.CacheLoader;
@@ -34,7 +36,7 @@ public class Main extends Application {
 		try {
 			launch(args);
 		} catch (Exception e) {
-			LoggingHandler.log(e);
+			LoggingHandler.log(e, Level.SEVERE);
 		}
 	}
 }

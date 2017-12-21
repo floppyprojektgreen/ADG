@@ -28,8 +28,6 @@ public class GameSaver {
 
 		try (FileOutputStream fos = new FileOutputStream(file); ObjectOutputStream out = new ObjectOutputStream(fos)) {
 			out.writeObject(saveState);
-		} catch (IOException e) {
-			throw e;
 		}
 	}
 

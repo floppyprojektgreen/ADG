@@ -7,6 +7,7 @@ import java.util.Deque;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
 
 import ch.zhaw.students.adgame.audio.AudioHandler;
 import ch.zhaw.students.adgame.audio.AudioTrack;
@@ -14,6 +15,7 @@ import ch.zhaw.students.adgame.configuration.FileExtenstionConfiguration;
 import ch.zhaw.students.adgame.configuration.SystemConfiguration;
 import ch.zhaw.students.adgame.domain.ChangeEvent;
 import ch.zhaw.students.adgame.domain.GameState;
+import ch.zhaw.students.adgame.logging.LoggingHandler;
 import javafx.application.Platform;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXMLLoader;
@@ -144,7 +146,7 @@ public class WindowHandler {
 				currentStackEventListeners.put(pane, c);
 			}
 		} catch (IOException e) {
-			throw new RuntimeException(e);
+			LoggingHandler.log(e, Level.SEVERE);
 		}
 	}
 	

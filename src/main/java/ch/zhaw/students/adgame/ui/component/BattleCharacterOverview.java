@@ -4,9 +4,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Level;
 
 import ch.zhaw.students.adgame.domain.entity.Character;
 import ch.zhaw.students.adgame.domain.item.Weapon;
+import ch.zhaw.students.adgame.logging.LoggingHandler;
 import ch.zhaw.students.adgame.resource.TextureLoader;
 import ch.zhaw.students.adgame.ui.event.AdditionalInfoMouseEvent;
 import javafx.beans.property.ObjectProperty;
@@ -77,8 +79,8 @@ public class BattleCharacterOverview extends AnchorPane {
 
         try {
             fxmlLoader.load();
-        } catch (IOException exception) {
-        	throw new RuntimeException(exception);
+        } catch (IOException e) {
+        	LoggingHandler.log(e, Level.SEVERE);
         }
     }
 	

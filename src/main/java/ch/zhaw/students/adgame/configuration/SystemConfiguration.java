@@ -4,6 +4,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
+import java.util.logging.Level;
+
+import ch.zhaw.students.adgame.logging.LoggingHandler;
 
 /**
  * Enumeration with keys for the system configuration file.
@@ -29,7 +32,7 @@ public enum SystemConfiguration {
 		try (InputStream in = new FileInputStream(MainConfiguration.SYSTEM_CONFIGURATION)) {
 			resourceProp.load(in);
 		} catch (IOException e) {
-			e.printStackTrace();
+			LoggingHandler.log(e, Level.SEVERE);
 		}
 	}
 	

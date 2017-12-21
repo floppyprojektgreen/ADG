@@ -43,10 +43,6 @@ public class LoggingHandler {
 		log(mb.getMessage(), level);
 	}
 	
-	public static void log(Exception e) {
-		log(e, Level.SEVERE);
-	}
-	
 	public static void severe(String msg) {
 		log(msg, Level.SEVERE);
 	}
