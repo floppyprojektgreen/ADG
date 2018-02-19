@@ -20,7 +20,7 @@ public class LoggingHandler {
 				file.mkdir();
 			}
 			
-			FileHandler fh = new FileHandler("log/%u.%g.log", 5_000_000, 10);
+			FileHandler fh = new FileHandler("log/adg-%u.%g.log", 5_000_000, 10);
 			fh.setFormatter(new SimpleFormatter());
 			
 			LOGGER.addHandler(fh);
