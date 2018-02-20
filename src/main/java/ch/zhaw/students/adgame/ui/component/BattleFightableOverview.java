@@ -1,8 +1,10 @@
 package ch.zhaw.students.adgame.ui.component;
 
 import java.io.IOException;
+import java.util.logging.Level;
 
 import ch.zhaw.students.adgame.domain.Fightable;
+import ch.zhaw.students.adgame.logging.LoggingHandler;
 import ch.zhaw.students.adgame.resource.TextureLoader;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
@@ -52,8 +54,8 @@ public class BattleFightableOverview extends AnchorPane {
 
         try {
             fxmlLoader.load();
-        } catch (IOException exception) {
-        	throw new RuntimeException(exception);
+        } catch (IOException e) {
+        	LoggingHandler.log(e, Level.SEVERE);
         }
     }
 	

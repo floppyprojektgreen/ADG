@@ -1,8 +1,10 @@
 package ch.zhaw.students.adgame.ui.component;
 
 import java.io.IOException;
+import java.util.logging.Level;
 
 import ch.zhaw.students.adgame.domain.item.Item;
+import ch.zhaw.students.adgame.logging.LoggingHandler;
 import ch.zhaw.students.adgame.resource.TextureLoader;
 import ch.zhaw.students.adgame.ui.event.AdditionalInfoMouseEvent;
 import javafx.beans.property.DoubleProperty;
@@ -67,8 +69,8 @@ public class ItemListItem extends AnchorPane {
 
         try {
             fxmlLoader.load();
-        } catch (IOException exception) {
-        	throw new RuntimeException(exception);
+        } catch (IOException e) {
+        	LoggingHandler.log(e, Level.SEVERE);
         }
     }
 	

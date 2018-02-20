@@ -4,6 +4,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
+import java.util.logging.Level;
+
+import ch.zhaw.students.adgame.logging.LoggingHandler;
 
 /**
  * Enumeration with keys for the color configuration file.
@@ -69,7 +72,7 @@ public enum ColorConfiguration {
 		try (InputStream in = new FileInputStream(MainConfiguration.COLOR_CONFIGURATION)) {
 			colorProp.load(in);
 		} catch (IOException e) {
-			e.printStackTrace();
+			LoggingHandler.log(e, Level.SEVERE);
 		}
 	}
 	

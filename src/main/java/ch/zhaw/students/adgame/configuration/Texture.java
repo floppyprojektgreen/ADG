@@ -8,6 +8,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Properties;
+import java.util.logging.Level;
+
+import ch.zhaw.students.adgame.logging.LoggingHandler;
 
 /**
  * Enumeration with keys for the resource configuration file.
@@ -190,7 +193,7 @@ public interface Texture {
 			try (InputStream in = new FileInputStream(MainConfiguration.RESOURCE_CONFIGURATION)) {
 				resourceProp.load(in);
 			} catch (IOException e) {
-				e.printStackTrace();
+				LoggingHandler.log(e, Level.SEVERE);
 			}
 		}
 		
@@ -209,8 +212,10 @@ public interface Texture {
 				.filter(t -> t.toString().equalsIgnoreCase(texture.substring(valStartIndex + 1).trim()))
 				.findFirst().get();
 		} catch (ClassNotFoundException | StringIndexOutOfBoundsException e) {
-			e.printStackTrace();
-		} catch (NoSuchElementException e) {}
+			LoggingHandler.log(e, Level.WARNING);
+		} catch (NoSuchElementException e) {
+			LoggingHandler.log(e, Level.INFO);
+		}
 		
 		return null;
 	}

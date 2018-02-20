@@ -1,8 +1,10 @@
 package ch.zhaw.students.adgame.ui.component;
 
 import java.io.IOException;
+import java.util.logging.Level;
 
 import ch.zhaw.students.adgame.configuration.Texture;
+import ch.zhaw.students.adgame.logging.LoggingHandler;
 import ch.zhaw.students.adgame.resource.TextureLoader;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.StringProperty;
@@ -30,8 +32,8 @@ public class ResourceView extends HBox {
 
         try {
             fxmlLoader.load();
-        } catch (IOException exception) {
-        	throw new RuntimeException(exception);
+        } catch (IOException e) {
+        	LoggingHandler.log(e, Level.SEVERE);
         }
     }
 	

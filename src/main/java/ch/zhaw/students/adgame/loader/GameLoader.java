@@ -4,8 +4,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.util.logging.Level;
 
 import ch.zhaw.students.adgame.domain.GameState;
+import ch.zhaw.students.adgame.logging.LoggingHandler;
 
 /**
  * This class is used to load a save state from a file in the file system.
@@ -23,7 +25,7 @@ public class GameLoader {
 
 			saveState = (SaveStateData) in.readObject();
 		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
+			LoggingHandler.log(e, Level.SEVERE);
 		}
 
 		if (saveState != null) {
