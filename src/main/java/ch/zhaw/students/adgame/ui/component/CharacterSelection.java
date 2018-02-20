@@ -3,8 +3,10 @@ package ch.zhaw.students.adgame.ui.component;
 import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Optional;
+import java.util.logging.Level;
 
 import ch.zhaw.students.adgame.configuration.Texture;
+import ch.zhaw.students.adgame.logging.LoggingHandler;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableMap;
 import javafx.fxml.FXML;
@@ -39,8 +41,8 @@ public class CharacterSelection extends AnchorPane {
 
         try {
             fxmlLoader.load();
-        } catch (IOException exception) {
-        	throw new RuntimeException(exception);
+        } catch (IOException e) {
+        	LoggingHandler.log(e, Level.SEVERE);
         }
     }
 	

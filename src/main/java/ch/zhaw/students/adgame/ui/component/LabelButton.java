@@ -1,7 +1,9 @@
 package ch.zhaw.students.adgame.ui.component;
 
 import java.io.IOException;
+import java.util.logging.Level;
 
+import ch.zhaw.students.adgame.logging.LoggingHandler;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.StringProperty;
@@ -36,8 +38,8 @@ public class LabelButton extends Group {
 
         try {
             fxmlLoader.load();
-        } catch (IOException exception) {
-        	throw new RuntimeException(exception);
+        } catch (IOException e) {
+        	LoggingHandler.log(e, Level.SEVERE);
         }
 	}
 	

@@ -2,11 +2,13 @@ package ch.zhaw.students.adgame.ui.window;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.logging.Level;
 
 import ch.zhaw.students.adgame.configuration.ColorConfiguration;
 import ch.zhaw.students.adgame.configuration.FileExtenstionConfiguration;
 import ch.zhaw.students.adgame.configuration.Texture;
 import ch.zhaw.students.adgame.loader.GameLoader;
+import ch.zhaw.students.adgame.logging.LoggingHandler;
 import ch.zhaw.students.adgame.resource.ColorLoader;
 import ch.zhaw.students.adgame.resource.TextureLoader;
 import ch.zhaw.students.adgame.ui.ResizableUI;
@@ -84,7 +86,8 @@ public class MainMenuController implements ResizableUI {
 				GameLoader.loadGame(selectedFile);
 				WindowHandler.get().openUI(UserInterface.BOARD);
 			} catch (IOException e) {
-				e.printStackTrace();
+				//TODO: inform that load did not work.
+				LoggingHandler.log(e, Level.WARNING);
 			}
 		}
 	}

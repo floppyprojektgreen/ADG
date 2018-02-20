@@ -5,7 +5,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 import java.util.Properties;
+import java.util.logging.Level;
 import java.util.stream.Collectors;
+
+import ch.zhaw.students.adgame.logging.LoggingHandler;
 
 /**
  * Representation of the configuration saved in the item configuration file
@@ -19,7 +22,7 @@ public class ItemConfiguration {
 		try (InputStream in = new FileInputStream(MainConfiguration.ITEM_CONFIGURATION)) {
 			itemProp.load(in);
 		} catch (IOException e) {
-			e.printStackTrace();
+			LoggingHandler.log(e, Level.SEVERE);
 		}
 	}
 	
