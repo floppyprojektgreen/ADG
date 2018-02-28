@@ -13,6 +13,7 @@ import javafx.scene.image.Image;
  */
 public class TextureLoader {
 	private static Map<Texture, Image> cache = new HashMap<>();
+	private static final Image UNDIFINED_IMAGE = new Image("file:" + Texture.getConfiguration(null), 1280, 1280, true, true);
 
 	/**
 	 * Checks if a wanted texture is in the cache and loads it if not. Gives back
@@ -27,7 +28,7 @@ public class TextureLoader {
 				image = new Image(file.toURI().toString(), 1280, 1280, true, true);
 				cache.put(resource, image);
 			} else {
-				image = new Image("file:" + Texture.getConfiguration(null), 1280, 1280, true, true);
+				image = UNDIFINED_IMAGE;
 			}
 		}
 		return image;
